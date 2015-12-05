@@ -22,7 +22,7 @@ public class Robot extends IterativeRobot {
 	int RightRearMotorChannel;
 	
 	DriveTrain driveTrain;
-	
+	Manipulator manipulator;
 	
     public void robotInit() {
       	leftStick = new Joystick(1);
@@ -33,7 +33,8 @@ public class Robot extends IterativeRobot {
     	RightFrontMotorChannel = 2;
     	RightRearMotorChannel = 3;
     	
-    	driveTrain = new DriveTrain(LeftFrontMotorChannel, LeftRearMotorChannel, RightFrontMotorChannel, RightRearMotorChannel, leftStick, rightStick);
+    	driveTrain = new DriveTrain(LeftFrontMotorChannel, LeftRearMotorChannel, 
+    			RightFrontMotorChannel, RightRearMotorChannel, leftStick, rightStick);
     	
     	driveTrain.driveTrainInit();
     }
@@ -52,7 +53,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
     	
     	driveTrain.driveTrainPeriodic();
-        
+        manipulator.manipulatorPeriodic();
     }
     
     /**

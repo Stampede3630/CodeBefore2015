@@ -40,9 +40,7 @@ public class DriveTrain {
 		mainDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, false);
 		mainDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		mainDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
-		
-		mainDrive.mecanumDrive_Cartesian(leftStick.getX(), leftStick.getY(), rightStick.getX(), 0);
-		
+				
 		mainDrive.setSafetyEnabled(false);
 	}
 	
